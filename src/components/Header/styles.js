@@ -65,7 +65,7 @@ export const MenuRigth = styled.a`
     text-decoration: none;
 `
 
-export const userPicture = styled.img`
+export const UserPicture = styled.img`
     width: 32px;
     height: 32px;
     border-radius: 22px;

@@ -1,5 +1,5 @@
 import { MdEmail, MdLock } from "react-icons/md"
-
+import { useNavigate } from "react-router-dom"
 import { Header } from "../../components/Header"
 import { Input } from "../../components/Input"
 import { Button } from "../../components/Button"
@@ -18,6 +18,13 @@ import {
 
 
 const Login = () => {
+
+    const navigate = useNavigate();
+
+    const handleClickSignIn = () => {
+        navigate("/feed")
+    }
+
     return (<>
         <Header />
         <Container>
@@ -34,7 +41,7 @@ const Login = () => {
                     <form>
                         <Input placeholder="E-mail" leftIcon={<MdEmail />} />
                         <Input placeholder="Senha" type="password" leftIcon={<MdLock />} />
-                        <Button title="Entrar" variant="secundary" />
+                        <Button title="Entrar" variant="secundary" onClick={handleClickSignIn} />
                     </form>
                     <Row>
                         <EsqueciText>Esqueci minha senha</EsqueciText>

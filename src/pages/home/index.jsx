@@ -1,5 +1,7 @@
 import { Header } from "../../components/Header"
 
+import { useNavigate } from "react-router-dom"
+
 // banner original
 // import bannerImage from "../../assets/banner.png"
 // banner ney
@@ -15,6 +17,13 @@ import { Button } from "../../components/Button"
 
 
 const Home = () => {
+
+    const navigate = useNavigate();
+
+    const handleClickSignIn = () => {
+        navigate("/login")
+    }
+
     return (<>
         <Header />
         <Container>
@@ -29,7 +38,7 @@ const Home = () => {
                     Domine as tecnologias utilizadas pelas empresas mais inovadoras do mundo e encare 
                     seu novo desafio profissional, evoluindo em comunidade com os melhores experts.
                 </TextContent>
-                <Button title="Começar agora" variant="secundary" onClick={() => null} />
+                <Button title="Começar agora" variant="secundary" onClick={handleClickSignIn} />
             </div>
             <div>
                 <img src={bannerImage} alt="Imagem principal" />

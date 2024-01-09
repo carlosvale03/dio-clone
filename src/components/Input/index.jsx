@@ -2,7 +2,7 @@ import React from 'react'
 
 import { IconContainer, InputContainer, InputText, ErrorText } from "./styles"
 
-import { Controller, SubmitHandler } from "react-hook-form"
+import { Controller } from "react-hook-form"
 
 const Input = ({ leftIcon, name, control, errorMessage, ...rest }) => {
   return (

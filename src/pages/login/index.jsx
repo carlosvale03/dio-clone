@@ -31,7 +31,7 @@ const schema = yup
 
 const Login = () => {
     const navigate = useNavigate();
-    
+
     const {
         control,
         handleSubmit,
@@ -42,45 +42,50 @@ const Login = () => {
     });
 
     const onSubmit = async formData => {
-        try{
+        try {
             const { data } = await api.get(`users?email=${formData.email}&senha=${formData.password}`);
-            if(data.length === 1){
+            if (data.length === 1) {
                 navigate("/feed")
-            }else{
+            } else {
                 alert("Email ou senha invalidos!")
             }
-        }catch{
+        } catch {
             alert("Houve um erro!")
         }
     };
 
+    const Cadastro = () => {
+        navigate("/cadastro")
+    }
 
-    return (<>
-        <Header />
-        <Container>
-            <Column>
-                <Title>
-                    A plataforma para você aprender com experts, dominar as principais tecnologias
-                    e entrar mais rapido nas empresas mais desejadas.
-                </Title>
-            </Column>
-            <Column>
-                <Wrapper>
-                    <TitleLogin>Faça seu cadastro</TitleLogin>
-                    <SubTitleLogin>Faça seu login e make the change._</SubTitleLogin>
-                    <form onSubmit={handleSubmit(onSubmit)}>
-                        <Input name="email" errorMessage={errors.email?.message} control={control} placeholder="E-mail" leftIcon={<MdEmail />} />
-                        <Input name="password" errorMessage={errors.password?.message} control={control} placeholder="Senha" type="password" leftIcon={<MdLock />} />
-                        <Button title="Entrar" variant="secundary" type="submit" />
-                    </form>
-                    <Row>
-                        <EsqueciText>Esqueci minha senha</EsqueciText>
-                        <CriarText>Criar Conta</CriarText>
-                    </Row>
-                </Wrapper>
-            </Column>
-        </Container>
-    </>)
+
+    return (
+        <>
+            <Header />
+            <Container>
+                <Column>
+                    <Title>
+                        A plataforma para você aprender com experts, dominar as principais tecnologias
+                        e entrar mais rapido nas empresas mais desejadas.
+                    </Title>
+                </Column>
+                <Column>
+                    <Wrapper>
+                        <TitleLogin>Faça seu cadastro</TitleLogin>
+                        <SubTitleLogin>Faça seu login e make the change._</SubTitleLogin>
+                        <form onSubmit={handleSubmit(onSubmit)}>
+                            <Input name="email" errorMessage={errors.email?.message} control={control} placeholder="E-mail" leftIcon={<MdEmail />} />
+                            <Input name="password" errorMessage={errors.password?.message} control={control} placeholder="Senha" type="password" leftIcon={<MdLock />} />
+                            <Button title="Entrar" variant="secundary" type="submit" />
+                        </form>
+                        <Row>
+                            <EsqueciText>Esqueci minha senha</EsqueciText>
+                            <CriarText onClick={Cadastro} >Criar Conta</CriarText>
+                        </Row>
+                    </Wrapper>
+                </Column>
+            </Container>
+        </>)
 }
 
 export { Login }

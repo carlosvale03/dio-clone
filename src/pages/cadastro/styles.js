@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const Container = styled.main`
     width: 100%;
@@ -9,23 +9,11 @@ export const Container = styled.main`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-`
-
-export const Wrapper = styled.div`
-    max-width: 300px;
+    /* align-items: center; */
 `
 
 export const Column = styled.div`
     flex: 1;
-`
-
-export const Row = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
 `
 
 export const Title = styled.h2`
@@ -33,11 +21,14 @@ export const Title = styled.h2`
     font-style: normal;
     font-weight: 700;
     font-size: 32px;
-    width: 320px;
-    margin-bottom: 20px;
+    color: #FFFFFF;
     line-height: 44px;
 
-    color: #FFFFFF;
+    width: 380px;
+`
+
+export const Wrapper = styled.div`
+    max-width: 330px;
 `
 
 export const TitleLogin = styled.p`
@@ -45,8 +36,8 @@ export const TitleLogin = styled.p`
     font-style: normal;
     font-weight: 700;
     font-size: 32px;
-    margin-bottom: 20px;
-    line-height: 44px;
+    color: #FFFFFF;
+    line-height: 30px;
 `
 
 export const SubTitleLogin = styled.p`
@@ -54,30 +45,22 @@ export const SubTitleLogin = styled.p`
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
-    margin-bottom: 35px;
-    line-height: 25px;
+    color: #FFFFFF;
+    line-height: 24px;
+
+    margin: 20px 0;
 `
 
-export const EsqueciText = styled.p`
+export const ToLogin = styled.p`
     font-family: "Open Sans";
     font-style: normal;
     font-weight: 700;
     font-size: 14px;
+    color: #FFFFFF;
     line-height: 19px;
 
-    color: #E5E044;
-
-    cursor: pointer;
-`
-
-export const CriarText = styled.p`
-    font-family: "Open Sans";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 19px;
-
-    color: #E23DD7;
-
-    cursor: pointer;
+    span {
+        color: #23DD7A;
+        cursor: pointer;
+    }
 `
